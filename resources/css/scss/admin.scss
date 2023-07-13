@@ -1,0 +1,52 @@
+:root {
+    --background-color: #ececec;
+    --font-color: #3e3e3e;
+}
+
+
+*, html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body {
+    background-color: var(--background-color);
+    font-family: sans-serif;
+    color: var(--font-color);
+}
+
+h1 {
+    font-size: 2em;
+}
+
+section {
+    width: 90%;
+    margin: auto;
+
+
+    & > div {
+        padding: 20px;
+        background-color: white;
+        
+        & > table {
+            width: 100%;
+            border-collapse: collapse;
+            
+            tr {
+
+                td, th {
+                    border: 1px solid rgb(227, 227, 227);
+                    padding: 5px 10px;
+                    text-align: left;
+                }
+            }
+        }
+
+
+
+
+    }
+
+}

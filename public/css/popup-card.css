@@ -1,0 +1,80 @@
+.popup-card {
+  --top: 0px;
+  --left: 0px;
+  --border-radius: 6px;
+  position: fixed;
+  display: flex;
+  top: var(--top);
+  left: var(--left);
+  background: white;
+  border-radius: var(--border-radius);
+  z-index: 7000;
+  box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.07);
+}
+@media only screen and (max-width: 768px) {
+  .popup-card {
+    display: none;
+  }
+}
+.popup-card > ul > li {
+  border-bottom: 1px solid rgb(227, 227, 227);
+}
+.popup-card > ul > li:last-child {
+  border: none;
+}
+.popup-card > ul > li a {
+  display: block;
+  padding: 10px 15px;
+  font-size: 15px;
+  color: rgb(75, 75, 75);
+}
+.popup-card > ul > li a > i {
+  margin-right: 10px;
+  font-size: 1.4em;
+}
+.popup-card > ul > li a:hover {
+  background: rgba(0, 0, 0, 0.03);
+  color: #728ca0;
+}
+.popup-card.left-arrow:before {
+  content: "";
+  position: absolute;
+  background: inherit;
+  width: 10px;
+  height: 10px;
+  left: -10px;
+  bottom: 20%;
+  clip-path: polygon(0 50%, 100% 100%, 100% 0);
+}
+.popup-card.right-arrow:after {
+  content: "";
+  position: absolute;
+  background: inherit;
+  width: 10px;
+  height: 10px;
+  right: -10px;
+  bottom: 20%;
+  clip-path: polygon(0 0, 0 100%, 100% 50%);
+}
+.popup-card.top-arrow:before {
+  content: "";
+  position: absolute;
+  background: inherit;
+  width: 10px;
+  height: 10px;
+  right: 10px;
+  top: -10px;
+  clip-path: polygon(0 100%, 100% 100%, 50% 0);
+}
+.popup-card .logout {
+  margin-top: 10px;
+  color: rgb(202, 69, 69);
+  border-end-start-radius: var(--border-radius);
+  border-end-end-radius: var(--border-radius);
+  border: none;
+}
+.popup-card .logout:hover {
+  color: rgb(177, 51, 51);
+}
+
+/*# sourceMappingURL=popup-card.css.map */

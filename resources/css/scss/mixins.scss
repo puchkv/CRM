@@ -1,0 +1,51 @@
+@import 'variables';
+
+@mixin device($breakpoints...) {
+    @each $break in $breakpoints {
+        @if $break == mobile {
+            @media only screen and (max-width: $mobile-width) { 
+                @content;
+            }
+        }
+    
+        @if $break == tablet {
+            @media only screen and (max-width: $tablet-width) { 
+                @content;
+            }
+        }
+        
+        @if $break == laptop {
+            @media only screen and (max-width: $laptop-width) { 
+                @content;
+            }
+        } 
+    
+        @if $break == desktop {
+            @media only screen and (max-width: $desktop-width) { 
+                @content;
+            }
+        } 
+    }
+}
+
+@mixin font-size {
+    @media only screen and (max-width: $mobile-width) {
+        font-size: calc($base-font-size + .4vh) !important;
+    }
+
+    @media only screen and (max-width: $tablet-width) {
+        font-size: calc($base-font-size + .3vh) !important;
+    }
+
+    @media only screen and (max-width: $laptop-width) {
+        font-size: calc($base-font-size + .2vh) !important;
+    }
+
+    @media only screen and (max-width: $desktop-width) {
+        font-size: calc($base-font-size + .1vh) !important;
+    }
+
+    @media only screen and (min-width: $fourk-width) {
+        font-size: calc($base-font-size + .2vh) !important;
+    }
+}

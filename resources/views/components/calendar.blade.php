@@ -1,0 +1,110 @@
+<div class="calendar">
+
+</div>
+
+<script src="{{ URL::asset('js/calendar.js')}}"></script>
+
+<script>
+    let calendar = new Calendar(document.querySelector('.calendar'));
+    calendar.init();
+</script>
+
+<style>
+.calendar {
+    padding: calc(8px + .6vw);
+    background: #fff;
+    border-radius: 6px;
+    font-size: calc(12px + .5vw);
+    cursor:default;
+    user-select: none;
+}
+
+.calendar > ul, 
+.calendar > .view > ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.calendar > .month {
+    display: flex;
+    align-items: center;
+    padding: calc(8px + .3vw) calc(15px + .3vw);
+}
+
+.calendar > .month > .month-name {
+    text-transform: capitalize;
+    flex: 1 1 fit-content;
+}
+
+.calendar > .month > .month-btn {
+    color: rgb(164, 174, 207) !important;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+.calendar > .view {
+    overflow-x: auto;
+}
+
+.calendar > .view::-webkit-scrollbar {
+    height: 10px;
+  }
+
+  .calendar > .view::-webkit-scrollbar-track {
+    background-color: rgb(213, 213, 213);
+  }
+
+  .calendar > .view::-webkit-scrollbar-thumb {
+    background: rgb(198, 199, 215);;
+  }
+
+
+.calendar > .view > .weekdays {
+    color: #afb8cf;
+    font-variant: small-caps;
+    margin: 15px 0;
+}
+
+.calendar > .view > .days, .weekdays {
+    display: grid;
+    gap: 5px;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+}
+
+.calendar > .view > .weekdays li {
+    min-width: 30px;
+}
+
+
+.calendar > .view > .days .prev {
+    color: rgba(0,0,0,0.2);
+}
+
+.calendar > .view > .days .next {
+    color: rgb(166, 183, 209);
+}
+
+
+.calendar > .view > .days > li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer !important;
+    border-radius: 50%;
+    min-width: 30px;
+    min-height: 30px;
+    aspect-ratio: 1 / 1;
+}
+
+
+.calendar > .view > .days > li:hover {
+    background: rgba(0,0,0,0.1);
+}
+
+.calendar > .view > .days .today {
+    background: rgb(206, 214, 241)  !important;
+}
+
+</style>

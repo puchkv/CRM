@@ -1,0 +1,52 @@
+body {
+    background: rgb(45, 66, 66);
+    font-family: sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.container {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: 0 auto;
+    min-height: 100vh;
+    justify-content: center;
+}
+
+.container > .draggableContainer {
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+    border-radius: 20px;
+    overflow: auto;
+}
+
+.container .draggableContainer {
+    background: rgba(45, 42, 59, 0.59);
+}
+
+.item {
+    display: flex;
+    padding: 40px;
+    background: white;
+    user-select: none;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 400ms ease-in-out;
+}
+
+
+.dragging {
+    background: rgba(255,255,255,0.5) !important;
+}
+
+.dropping {
+    background: rgba(179, 255, 193, 0.493) !important;
+}
+
+
+

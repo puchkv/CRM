@@ -1,0 +1,79 @@
+@import 'variables';
+
+
+.popup-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: black;
+    z-index: 10001;
+    opacity: 0.7;
+}
+
+.popup-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & > .popup {
+        display: flex;
+        background-color: white;
+        padding: 20px;
+        border-radius: $default-border-radius;
+        margin: 0 auto;
+        z-index: 10002;
+
+        & > form {
+            display: flex;
+            gap: 20px;
+            flex-direction: column;
+
+            & > .popup-row {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+
+                & > label {
+                    background: transparent;
+                    font-size: calc(12px + .2vh);
+                    color: $primary-icon-color;
+                    z-index: 10;
+                    user-select: none;
+                    width: fit-content;
+                }
+
+                & > input {
+                    border-radius: $default-border-radius;
+                    
+
+                    &:focus {
+                        border: 1px solid $primary-icon-color;
+                    }
+
+                    &:disabled {
+                        cursor: not-allowed;
+                    }
+                }
+
+                & > select {
+                    width: 100%;    
+
+                    &:disabled {
+                        cursor: not-allowed;
+                    }
+                }
+            }
+
+        }
+    }
+}
+

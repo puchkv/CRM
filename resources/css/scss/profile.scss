@@ -1,0 +1,114 @@
+@import 'mixins';
+@import 'inputs';
+
+
+.wrapper > main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.profile-row {
+    background: #fff;
+    padding: 20px;
+    border-radius: 6px;
+    border: 1px solid rgb(218, 218, 218);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    position: relative;
+
+    @include device(mobile) {
+        
+    }
+
+    & > header {
+        display: block;
+        margin-bottom: 20px;
+        font-size: calc(20px + .2vw);
+        width: 100%;
+        padding: 0;
+
+    }
+
+    & > .left {
+        width: calc(100% - 400px);
+        
+        @include device(tablet) {
+            width: 100%;
+        }
+
+        & > form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            input {
+
+                height: 40px;
+
+                &:focus {
+                    outline: 2px solid blue;
+                    outline-offset: -1px;
+                    
+                }
+            }
+            
+            & > div {
+                color: #bbb;    
+            }
+        }
+    }
+
+
+    & > .right {
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 400px;
+        background: #f7f7f8;
+        border-top-right-radius: inherit;
+        border-bottom-right-radius: inherit;
+        border-left: 1px solid rgb(218,218,218);
+        
+        @include device(tablet) {
+            position: relative;
+            border-radius: inherit;
+            border: 1px solid rgb(218,218,218);
+        }
+
+        & > ul {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;   
+            padding: 15px;
+            font-size: calc(14px + .1vw);
+
+            & > li {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: center;
+
+                & > legend {
+                    color: #919191;  
+                }   
+            }
+        }
+
+
+    }
+}
+
+.not-verified {
+    color: rgb(231, 98, 98);
+    padding: 3px 6px;
+}
+
+.verified {
+    color: rgb(11, 179, 98);
+    padding: 3px 6px;
+}
+

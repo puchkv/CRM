@@ -1,0 +1,107 @@
+@import 'variables';
+@import 'mixins';
+
+.popup-card {
+
+    --top: 0px;
+    --left: 0px;
+    --border-radius: 6px;
+
+    position: fixed;
+    display: flex;
+    top: var(--top);
+    left: var(--left);
+    background: white;
+    border-radius: var(--border-radius);
+    z-index: 7000;
+    box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.07);
+    
+    @include device(tablet) {
+        display: none;
+    }
+
+    & > ul {
+
+        & > li {
+            border-bottom: 1px solid rgb(227, 227, 227);
+
+            &:last-child {
+                border: none;
+            }
+
+            a {
+                display: block;
+                padding: 10px 15px;
+                font-size: 15px;
+                color: rgb(75, 75, 75);
+                
+
+                & > i {
+                    margin-right: 10px;
+                    font-size: 1.4em;
+                }
+
+                &:hover {
+                    background: rgba(0,0,0,0.03);
+                    color: $primary-icon-color;
+                }
+            }   
+        }
+    }
+
+    &.left-arrow {
+        &:before {
+            content: "";
+            position: absolute;
+            background:inherit;
+            width: 10px;
+            height: 10px;
+            left: -10px;
+            bottom: 20%;
+            clip-path: polygon(0 50%, 100% 100%, 100% 0);
+            
+        }
+    }
+
+    &.right-arrow {
+        &:after {
+            content: "";
+            position: absolute;
+            background:inherit;
+            width: 10px;
+            height: 10px;
+            right: -10px;
+            bottom: 20%;
+            clip-path: polygon(0 0, 0 100%, 100% 50%);
+        }
+    }
+
+    &.top-arrow {
+        &:before {
+            content: "";
+            position: absolute;
+            background:inherit;
+            width: 10px;
+            height: 10px;
+            right: 10px;
+            top: -10px;
+            clip-path: polygon(0 100%, 100% 100%, 50% 0);
+        }
+    }
+
+    .logout {
+        margin-top: 10px;
+        color: rgb(202, 69, 69);
+        border-end-start-radius: var(--border-radius);
+        border-end-end-radius: var(--border-radius);
+        border: none;
+
+        &:hover {
+            color: rgb(177, 51, 51);
+        }
+    }
+
+
+}
+
+

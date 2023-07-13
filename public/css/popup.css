@@ -1,0 +1,66 @@
+.popup-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: black;
+  z-index: 10001;
+  opacity: 0.7;
+}
+
+.popup-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.popup-container > .popup {
+  display: flex;
+  background-color: white;
+  padding: 20px;
+  border-radius: 4px;
+  margin: 0 auto;
+  z-index: 10002;
+}
+.popup-container > .popup > form {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+}
+.popup-container > .popup > form > .popup-row {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.popup-container > .popup > form > .popup-row > label {
+  background: transparent;
+  font-size: calc(12px + 0.2vh);
+  color: #728ca0;
+  z-index: 10;
+  user-select: none;
+  width: fit-content;
+}
+.popup-container > .popup > form > .popup-row > input {
+  border-radius: 4px;
+}
+.popup-container > .popup > form > .popup-row > input:focus {
+  border: 1px solid #728ca0;
+}
+.popup-container > .popup > form > .popup-row > input:disabled {
+  cursor: not-allowed;
+}
+.popup-container > .popup > form > .popup-row > select {
+  width: 100%;
+}
+.popup-container > .popup > form > .popup-row > select:disabled {
+  cursor: not-allowed;
+}
+
+/*# sourceMappingURL=popup.css.map */
